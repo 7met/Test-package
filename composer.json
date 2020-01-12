@@ -1,0 +1,54 @@
+{
+    "name": "7met/test-package",
+    "description": "",
+    "keywords": [
+        "7met",
+        "test-package"
+    ],
+    "homepage": "https://github.com/7met/test-package",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "shoffstall",
+            "email": "sean@sycle.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "7met\\TestPackage\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "7met\\TestPackage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "7met\\TestPackage\\TestPackageServiceProvider"
+            ],
+            "aliases": {
+                "TestPackage": "7met\\TestPackage\\TestPackageFacade"
+            }
+        }
+    }
+}
